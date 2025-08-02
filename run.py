@@ -7,7 +7,11 @@ to this and you will need to output your predictions for the images of the test 
 to a file, which we will grade using github classrooms!
 """
 from __future__ import annotations
+import sys
 import os
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+
+from automl.pipeline import neps_training_wrapper
 from pathlib import Path
 
 from automl.pipeline import neps_training_wrapper
@@ -25,6 +29,7 @@ import argparse
 import logging
 from torch.utils.tensorboard import SummaryWriter
 import time
+import sys
 
 
 from automl.datasets import FashionDataset, FlowersDataset, EmotionsDataset, SkinCancerDataset
